@@ -38,10 +38,10 @@ export const certificateConfig = {
   program: "CodeAlpha Full Stack Website Developer Internship",
   title: "Full Stack Website Developer",
   organization: "CodeAlpha",
-  imageSrc: null,
-  pdfHref: null,
+  imageSrc: "/certificate/certificate-preview.png",
+  pdfHref: "/certificate/certificate.pdf",
   note:
-    "Placeholder — add your certificate preview to public/certificate/certificate-preview.png and the PDF to public/certificate/certificate.pdf, then set imageSrc and pdfHref in src/data/site.js.",
+    "Official internship certificate preview and PDF. Add the actual files in public/certificate to replace the placeholder files.",
 };
 
 export const educationItems = [

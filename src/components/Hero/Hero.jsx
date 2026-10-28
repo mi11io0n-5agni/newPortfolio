@@ -34,7 +34,7 @@ export default function Hero() {
             animate="visible"
             variants={introVariants}
           >
-            Ambo University · Computer Science · Full-Stack Web Development
+          
           </motion.p>
 
           <motion.h1
