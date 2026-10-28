@@ -1,0 +1,88 @@
+export const featuredProjects = [
+  {
+    id: "ecommerce",
+    name: "Ethio Gebeya — E-commerce Store",
+    shortName: "E-commerce Store",
+    overview:
+      "Full-stack MERN store where users register and log in with JWT, browse and search products, manage a cart, checkout, place orders, and view order history and profile details.",
+    highlights: [
+      "JWT authentication with protected routes",
+      "Cart quantity updates and checkout flow",
+      "Order history and user profile management",
+      "Deployed frontend (Vercel) and API (Render)",
+    ],
+    stack: [
+      "React",
+      "Redux Toolkit",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT",
+    ],
+    image: "/projects/ecommerce-home.png",
+    imageAlt: "Ethio Gebeya e-commerce home page screenshot",
+    github: "https://github.com/mi11io0n-5agni/CodeAlpha_EcommerceStore",
+    liveDemo: "https://ethiogebeya-store.vercel.app/",
+  },
+  {
+    id: "taskflow",
+    name: "TaskFlow — Project Management",
+    shortName: "TaskFlow",
+    overview:
+      "Collaborative MERN workspace with projects, Kanban boards (Todo → In Progress → Review → Done), task assignment, drag-and-drop, comments, notifications, and Socket.IO real-time updates.",
+    highlights: [
+      "Project membership and task CRUD",
+      "Drag-and-drop board with @hello-pangea/dnd",
+      "Task comments and notification center",
+      "Live demo on Vercel",
+    ],
+    stack: [
+      "React",
+      "Vite",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.IO",
+    ],
+    image: "/projects/taskflow-dashboard.png",
+    imageAlt: "TaskFlow dashboard screenshot",
+    github: "https://github.com/mi11io0n-5agni/CodeAlpha_ProjectManagement",
+    liveDemo: "https://taskflow-management-tool.vercel.app/",
+  },
+  {
+    id: "netflix-clone",
+    name: "Netflix Clone — Streaming UI",
+    shortName: "Netflix Clone",
+    overview:
+      "Streaming-platform-inspired React app using TMDB data: featured banner, category rows, movie and TV browsing, detail pages with trailers (YouTube), My List, watch history, and client-side auth stored in localStorage.",
+    highlights: [
+      "Home banner and horizontal content rows",
+      "Movies, TV, Latest, and detail routes",
+      "Trailer playback and My List persistence",
+      "Deployed on GitHub Pages",
+    ],
+    stack: ["React", "Vite", "React Router", "Axios", "Material UI", "TMDB API"],
+    image: "/projects/netflix-clone-preview.svg",
+    imageAlt: "Netflix clone project preview — replace with your screenshot",
+    github: "https://github.com/mi11io0n-5agni/Netflix-Clone",
+    liveDemo: "https://mi11io0n-5agni.github.io/Netflix-Clone/",
+  },
+  {
+    id: "coop-bank",
+    name: "COOP Bank Queue Management",
+    shortName: "COOP Bank Queue",
+    overview:
+      "Bank service queue system: customers request tickets by service type, check status by queue number, and staff manage Waiting → Serving → Completed workflows with role-based admin and employee dashboards.",
+    highlights: [
+      "Customer ticket generation (kiosk / get-queue flow)",
+      "Queue lookup by ticket number",
+      "Employee dashboard filtered by assigned service",
+      "Admin employee management and full queue overview",
+    ],
+    stack: ["React", "Vite", "Node.js", "Express", "MongoDB", "JWT"],
+    image: "/projects/coop-bank-preview.svg",
+    imageAlt: "COOP Bank queue system preview — replace with your screenshot",
+    github: "https://github.com/mi11io0n-5agni/BankingOperation",
+    liveDemo: "https://coopbankqueue.vercel.app/",
+  },
+];

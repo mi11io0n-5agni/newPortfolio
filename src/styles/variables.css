@@ -1,0 +1,25 @@
+:root {
+  --color-bg: #141b24;
+  --color-bg-elevated: #1a2430;
+  --color-bg-card: #1f2a38;
+  --color-border: rgba(203, 213, 225, 0.16);
+  --color-text: #f1f5f9;
+  --color-text-muted: #b6c2d1;
+  --color-accent: #22c55e;
+  --color-accent-soft: rgba(34, 197, 94, 0.16);
+  --color-accent-glow: rgba(34, 197, 94, 0.28);
+  --color-blue: #38bdf8;
+  --color-blue-soft: rgba(56, 189, 248, 0.14);
+
+  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-display: "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --space-section: clamp(4.5rem, 8vw, 6.5rem);
+  --container: min(1120px, calc(100% - 2rem));
+  --radius: 14px;
+  --radius-sm: 10px;
+  --nav-height: 4.25rem;
+
+  --shadow-card: 0 16px 36px rgba(0, 0, 0, 0.22);
+  --transition: 0.25s ease;
+}

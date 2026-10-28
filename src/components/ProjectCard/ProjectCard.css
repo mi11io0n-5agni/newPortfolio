@@ -1,0 +1,105 @@
+.project-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius) + 2px);
+  overflow: hidden;
+  background: var(--color-bg-card);
+  box-shadow: var(--shadow-card);
+}
+
+.project-card__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 320px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+  background: #243041;
+  flex-shrink: 0;
+  isolation: isolate;
+}
+
+.project-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.project-card:hover .project-card__media img {
+  transform: scale(1.02);
+}
+
+.project-card__body {
+  padding: 1.5rem 1.55rem 1.65rem;
+  min-width: 0;
+}
+
+.project-card__body h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.3rem;
+}
+
+.project-card__overview {
+  margin: 0 0 1rem;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.project-card__highlights {
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.project-card__highlights li + li {
+  margin-top: 0.35rem;
+}
+
+.project-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.15rem;
+}
+
+.project-card__stack span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(56, 189, 248, 0.12);
+  color: #dbeafe;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+}
+
+.project-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.project-card__links .btn {
+  font-size: 0.875rem;
+  padding: 0.6rem 1rem;
+}
+
+.project-card__demo-note {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  max-width: 16rem;
+  line-height: 1.45;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card:hover .project-card__media img {
+    transform: none;
+  }
+}

@@ -1,0 +1,136 @@
+.hero {
+  padding-top: calc(var(--nav-height) + 3rem);
+  min-height: min(92vh, 920px);
+  display: flex;
+  align-items: center;
+}
+
+.hero__layout {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero__content {
+  position: relative;
+  max-width: 760px;
+}
+
+.hero__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero__profile-frame {
+  padding: 0.35rem;
+  border-radius: 50%;
+  background: linear-gradient(
+    145deg,
+    rgba(34, 197, 94, 0.35),
+    rgba(56, 189, 248, 0.25)
+  );
+}
+
+.hero__profile-caption {
+  margin: 1rem 0 0.25rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.hero__profile-sub {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+}
+
+.hero__eyebrow {
+  color: var(--color-blue);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 6vw, 3.75rem);
+  line-height: 1.08;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.03em;
+}
+
+.hero__name {
+  background: linear-gradient(120deg, #bbf7d0, #22c55e 45%, #38bdf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__role {
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 1.25rem;
+}
+
+.hero__summary {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  max-width: 38rem;
+  margin: 0 0 2rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero__scroll {
+  display: inline-flex;
+  margin-top: 3rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.hero__scroll:hover {
+  border-color: rgba(34, 197, 94, 0.45);
+  color: var(--color-accent);
+}
+
+@media (min-width: 960px) {
+  .hero__layout {
+    grid-template-columns: 1.15fr minmax(260px, 0.85fr);
+    gap: 3rem;
+  }
+
+  .hero__profile {
+    justify-self: end;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__scroll {
+    animation: hero-bob 2.4s ease-in-out infinite;
+  }
+}
+
+@keyframes hero-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
