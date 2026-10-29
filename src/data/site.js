@@ -6,7 +6,7 @@ export const siteMeta = {
   /** Drop your photo at public/profile.jpg (or change this path). */
   profileImage: "/profile.jpg",
   /** Set your contact email here */
-  email: null,
+  email: "milionsagni1995@gmail.com",
   location: "Ambo, Ethiopia",
 };
 

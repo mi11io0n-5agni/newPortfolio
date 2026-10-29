@@ -31,7 +31,7 @@ export default function Navbar() {
     >
       <div className="navbar__inner container">
         <a className="navbar__brand" href="#home" onClick={closeMenu}>
-          <ProfileImage size="sm" priority />
+          <ProfileImage size="sm" priority src="/new-brand-image.jpg"/>
           <span className="navbar__brand-text">{siteMeta.name}</span>
         </a>
 

@@ -11,16 +11,21 @@ function getInitials(name) {
     .join("");
 }
 
-export default function ProfileImage({ className = "", size = "md", priority = false }) {
+export default function ProfileImage({
+  className = "",
+  size = "md",
+  priority = false,
+  src,
+}) {
   const [failed, setFailed] = useState(false);
-  const src = siteMeta.profileImage;
-  const showPhoto = Boolean(src) && !failed;
+  const imageSrc = src ?? siteMeta.profileImage;
+  const showPhoto = Boolean(imageSrc) && !failed;
 
   if (showPhoto) {
     return (
       <img
         className={`profile-image profile-image--${size} ${className}`.trim()}
-        src={src}
+        src={imageSrc}
         alt={`${siteMeta.name} profile photo`}
         loading={priority ? "eager" : "lazy"}
         decoding="async"
@@ -36,7 +41,7 @@ export default function ProfileImage({ className = "", size = "md", priority = f
       aria-label={`${siteMeta.name} profile placeholder`}
     >
       <span aria-hidden="true">{getInitials(siteMeta.name)}</span>
-      {!src && (
+      {!imageSrc && (
         <span className="profile-image__hint">Add photo at public/profile.jpg</span>
       )}
     </div>
