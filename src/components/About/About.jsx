@@ -11,7 +11,7 @@ export default function About() {
         <ScrollReveal>
           <div className="about__header">
             <div className="about__profile">
-              <ProfileImage size="md" />
+              <ProfileImage size="lg" src="/profile2.jpg" />
               <div>
                 <p className="about__profile-name">{siteMeta.name}</p>
                 <p className="about__profile-role">{siteMeta.title}</p>
