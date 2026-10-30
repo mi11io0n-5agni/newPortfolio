@@ -41,7 +41,7 @@ export const certificateConfig = {
   imageSrc: "/certificate/certificate-preview.png",
   pdfHref: "/certificate/certificate.pdf",
   note:
-    "Official internship certificate preview and PDF. Add the actual files in public/certificate to replace the placeholder files.",
+    "Official internship certificate preview and PDF.",
 };
 
 export const educationItems = [

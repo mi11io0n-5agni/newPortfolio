@@ -17,11 +17,10 @@ export default function Certificate() {
         <ScrollReveal>
           <p className="section-label">Internship</p>
           <h2 id="certificate-title" className="section-title">
-            CodeAlpha certificate
+            CodeAlpha certificate.
           </h2>
           <p className="section-intro">
-            {certificateConfig.program}. Certificate files are placeholders until
-            you add the official preview and PDF.
+            {certificateConfig.program}
           </p>
         </ScrollReveal>
 
