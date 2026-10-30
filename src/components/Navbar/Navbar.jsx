@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="navbar__inner container">
         <a className="navbar__brand" href="#home" onClick={closeMenu}>
           <ProfileImage size="sm" priority src="/new-brand-image.jpg"/>
-          <span className="navbar__brand-text">{siteMeta.name}</span>
+          <span className="navbar__brand-text">milion.dev</span>
         </a>
 
         <nav className="navbar__nav" aria-label="Primary">
