@@ -3,6 +3,7 @@ export const featuredProjects = [
     id: "ecommerce",
     name: "Ethio Gebeya — E-commerce Store",
     shortName: "E-commerce Store",
+    category: "Full-Stack",
     overview:
       "Full-stack MERN store where users register and log in with JWT, browse and search products, manage a cart, checkout, place orders, and view order history and profile details.",
     highlights: [
@@ -41,6 +42,7 @@ export const featuredProjects = [
     id: "taskflow",
     name: "TaskFlow — Project Management",
     shortName: "TaskFlow",
+    category: "Full-Stack",
     overview:
       "Collaborative MERN workspace with projects, Kanban boards (Todo → In Progress → Review → Done), task assignment, drag-and-drop, comments, notifications, and Socket.IO real-time updates.",
     highlights: [
@@ -79,6 +81,7 @@ export const featuredProjects = [
     id: "netflix-clone",
     name: "Netflix Clone — Streaming UI",
     shortName: "Netflix Clone",
+    category: "Frontend",
     overview:
       "Streaming-platform-inspired React app using TMDB data: featured banner, category rows, movie and TV browsing, detail pages with trailers (YouTube), My List, watch history, and client-side auth stored in localStorage.",
     highlights: [
@@ -110,6 +113,7 @@ export const featuredProjects = [
     id: "coop-bank",
     name: "COOP Bank Queue Management",
     shortName: "COOP Bank Queue",
+    category: "Full-Stack",
     overview:
       "Bank service queue system: customers request tickets by service type, check status by queue number, and staff manage Waiting → Serving → Completed workflows with role-based admin and employee dashboards.",
     highlights: [

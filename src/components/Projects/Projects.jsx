@@ -1,9 +1,25 @@
+import { useState } from "react";
 import ScrollReveal from "../ScrollReveal/ScrollReveal";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { featuredProjects } from "../../data/projects";
 import "./Projects.css";
 
+const filters = ["All", "Full-Stack", "Frontend", "Backend", "Real-time"];
+
 export default function Projects() {
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const filteredProjects =
+    activeFilter === "All"
+      ? featuredProjects
+      : featuredProjects.filter((project) => {
+          const projectCategory = project.category || "Full-Stack";
+          if (projectCategory === activeFilter) return true;
+          if (activeFilter === "Backend" && project.stack.includes("Node.js")) return true;
+          if (activeFilter === "Real-time" && project.stack.includes("Socket.IO")) return true;
+          return false;
+        });
+
   return (
     <section
       id="projects"
@@ -22,8 +38,25 @@ export default function Projects() {
           </p>
         </ScrollReveal>
 
+        <div className="projects__filters" aria-label="Project filters">
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              type="button"
+              className={
+                activeFilter === filter
+                  ? "projects__filter is-active"
+                  : "projects__filter"
+              }
+              onClick={() => setActiveFilter(filter)}
+            >
+              {filter}
+            </button>
+          ))}
+        </div>
+
         <div className="projects__list">
-          {featuredProjects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <ScrollReveal key={project.id} delay={index * 0.05}>
               <ProjectCard project={project} />
             </ScrollReveal>
