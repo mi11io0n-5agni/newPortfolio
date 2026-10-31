@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Mail } from "lucide-react";
+import { ArrowDown, FileText, Github, Mail } from "lucide-react";
 import ProfileImage from "../ProfileImage/ProfileImage";
 import { siteMeta } from "../../data/site";
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
@@ -82,6 +82,15 @@ export default function Hero() {
             <a className="btn btn-secondary" href="#contact">
               <Mail size={18} aria-hidden="true" />
               Get in touch
+            </a>
+            <a
+              className="btn btn-ghost"
+              href={siteMeta.resumeUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <FileText size={18} aria-hidden="true" />
+              Resume
             </a>
             <a
               className="btn btn-ghost"

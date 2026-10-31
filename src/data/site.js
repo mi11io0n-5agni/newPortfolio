@@ -8,6 +8,7 @@ export const siteMeta = {
   /** Set your contact email here */
   email: "milionsagni1995@gmail.com",
   location: "Ambo, Ethiopia",
+  resumeUrl: "/resume.pdf",
 };
 
 export const socialLinks = [
