@@ -1,30 +1,67 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Github, Linkedin, Mail, MapPin, Send } from "lucide-react";
 import ScrollReveal from "../ScrollReveal/ScrollReveal";
 import { siteMeta, socialLinks } from "../../data/site";
 import "./Contact.css";
 
 export default function Contact() {
+  const formRef = useRef(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("idle");
+
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const emailJsReady = Boolean(serviceId && templateId && publicKey);
 
   const onChange = (event) => {
     const { name, value } = event.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const onSubmit = (event) => {
-    event.preventDefault();
+  const fallbackMailto = () => {
     if (!siteMeta.email) {
       setStatus("no-email");
-      return;
+      return false;
     }
+
     const subject = encodeURIComponent(`Portfolio contact from ${form.name}`);
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
     );
+
     window.location.href = `mailto:${siteMeta.email}?subject=${subject}&body=${body}`;
     setStatus("sent");
+    return true;
+  };
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      setStatus("error");
+      return;
+    }
+
+    setStatus("sending");
+
+    if (emailJsReady) {
+      try {
+        await emailjs.sendForm(serviceId, templateId, formRef.current, {
+          publicKey,
+        });
+
+        setForm({ name: "", email: "", message: "" });
+        setStatus("success");
+      } catch (error) {
+        console.error("EmailJS send failed:", error);
+        fallbackMailto();
+      }
+      return;
+    }
+
+    fallbackMailto();
   };
 
   return (
@@ -43,7 +80,7 @@ export default function Contact() {
 
         <div className="contact__grid">
           <ScrollReveal delay={0.06}>
-            <form className="contact__form" onSubmit={onSubmit} noValidate>
+            <form ref={formRef} className="contact__form" onSubmit={onSubmit} noValidate>
               <div className="contact__field">
                 <label htmlFor="contact-name">Name</label>
                 <input
@@ -79,19 +116,32 @@ export default function Contact() {
                   onChange={onChange}
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary" disabled={status === "sending"}>
                 <Send size={18} aria-hidden="true" />
-                Send message
+                {status === "sending" ? "Sending..." : "Send message"}
               </button>
-              {status === "no-email" && (
+
+              {status === "error" && (
                 <p className="contact__status" role="status">
-                  Set your email in <code>src/data/site.js</code> to enable the
-                  mailto handoff.
+                  Please fill in all fields before sending.
                 </p>
               )}
+
+              {status === "no-email" && (
+                <p className="contact__status" role="status">
+                  Add your email in <code>src/data/site.js</code> or configure EmailJS in your .env file.
+                </p>
+              )}
+
               {status === "sent" && siteMeta.email && (
                 <p className="contact__status contact__status--ok" role="status">
                   Opening your email client…
+                </p>
+              )}
+
+              {status === "success" && (
+                <p className="contact__status contact__status--ok" role="status">
+                  Your message was sent successfully.
                 </p>
               )}
             </form>

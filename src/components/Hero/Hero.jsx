@@ -59,6 +59,17 @@ export default function Hero() {
             {siteMeta.title}
           </motion.p>
 
+          <motion.div
+            className="hero__availability"
+            custom={2.5}
+            initial="hidden"
+            animate="visible"
+            variants={introVariants}
+          >
+            <span className="hero__availability-dot" aria-hidden="true" />
+            Available for full-stack / front-end roles
+          </motion.div>
+
           <motion.p
             className="hero__summary"
             custom={3}
